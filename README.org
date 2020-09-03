@@ -1,2 +1,6 @@
 A couple of ~.org~ files written during the Intro to [[https://orgmode.org/worg/org-contrib/babel/][org-babel]].
 RSE Emacs meetup ([[https://m-x-research.github.io/]]), <2020-09-03 Thu>
+
+Note that GitHub now natively formats ~org~ syntax, so to look at the actual 
+org file, you should view the raw file (click "raw" on the top right corner when 
+viewing a file).
