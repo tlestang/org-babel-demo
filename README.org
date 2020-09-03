@@ -1,0 +1,2 @@
+A couple of ~.org~ files written during the Intro to [[https://orgmode.org/worg/org-contrib/babel/][org-babel]].
+RSE Emacs meetup ([[https://m-x-research.github.io/]]), <2020-09-03 Thu>

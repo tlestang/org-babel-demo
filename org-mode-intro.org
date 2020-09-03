@@ -1,0 +1,52 @@
+* A first level headline
+  :PROPERTIES:
+  :myproperty: value
+  :END:
+** A second level headline
+The content, /italics/, *bold* 
+* Another one
+
+|  a |  b |  c |
+| 1. | 2. | 3. |
+|    |    | 4. |
+|    |    |    |
+#+TBLFM: @3$3=@2$1+@2$>
+
+
+* DONE Something I want to do ASAP
+  - State "DONE"       from "TODO"       [2020-09-03 Thu 15:12]
+
+* Something that i am late for
+  DEADLINE: <2020-09-02 Wed>
+
+* An appointement
+  <2020-09-04 Fri>
+
+* Code blocks
+
+#+begin_src python
+  import numpy as np
+  a = np.arange(0,10,2)
+  return np.mean(a)
+#+end_src
+
+#+RESULTS:
+: 4.0
+
+#+begin_src shell
+  for file in $(ls)
+  do
+      echo $file
+  done
+#+end_src
+
+#+RESULTS:
+| config.el           |
+| figures             |
+| links.org           |
+| links.org~          |
+| org-mode-intro.html |
+| org-mode-intro.org  |
+| org-mode-intro.org~ |
+| org.org             |
+| ou-process.cpp      |

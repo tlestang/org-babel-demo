@@ -1,0 +1,14 @@
+* org-babel docs
+[[https://orgmode.org/manual/Working-with-Source-Code.html]]
+* Babel: Introduction
+[[https://orgmode.org/worg/org-contrib/babel/intro.html]]
+* org-babel reference card
+[[https://org-babel.readthedocs.io/en/latest/]]
+* Consistent Technical Documents Using Emacs and Org Mode
+[[https://www.youtube.com/watch?v=0g9BcZvQbXU&t=457s]]
+* C, C++, D Source Code Blocks in Org Mode
+[[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-C.html]]
+* Python Source Code Blocks in Org Mode
+[[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html]]
+* Configure active languages
+[[https://orgmode.org/worg/org-contrib/babel/languages.html#configure]]

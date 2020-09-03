@@ -1,0 +1,86 @@
+#+PROPERTY: header-args:python :prologue "import numpy as np;"
+* Generate data
+
+#+NAME: initial_data
+#+begin_src C++ :includes (list "<iostream>" "<random>") :cache yes
+  std::default_random_engine generator;
+  std::normal_distribution<double> distribution(0.0,1.0);
+
+  int N=10;
+  double dt = 0.1;
+  double mean = 0.0;
+  double diffusion = 0.5;
+
+  std::vector<double> timepoints(N);
+  std::vector<double> values(N);
+
+  double t, x, dw;
+  for(int i = 0;i<N;i++){
+    t = i*dt;
+    dw = distribution(generator);
+    x = x + (mean-x)*dt + sqrt(2.*diffusion)*dw;
+
+    std::cout << t << " " << x << std::endl;
+  }
+#+end_src
+
+#+RESULTS[2908baa678d31e0ace01e9a0fc9b49c65facbb19]: initial_data
+|   0 |  -0.121966 |
+| 0.1 |   -1.19659 |
+| 0.2 |  -0.392639 |
+| 0.3 |   -1.42856 |
+| 0.4 |   -1.25244 |
+| 0.5 |  -0.382359 |
+| 0.6 |  -0.310517 |
+| 0.7 |  -0.806102 |
+| 0.8 |   -0.26296 |
+| 0.9 | -0.0359645 |
+
+* Analyse the data
+
+#+begin_src python :var timeseries=initial_data :results output :exports both
+  timeseries = np.array(timeseries)
+  print(f"The mean is {np.mean(timeseries[:,1])}")
+#+end_src
+
+#+RESULTS:
+: The mean is -0.61900975
+
+
+We note that the value of the mean is src_python[:var timeseries=initial_data]{import numpy as np; timeseries = np.array(timeseries); return np.mean(timeseries[:,1])} {{{results(=-0.61900975=)}}}
+whi is consistent with the true value (0) because the length of the timeseries is only src_python[:var timeseries=initial_data]{import numpy as np; return len(timeseries)} {{{results(=10=)}}}.
+
+#+name: mean
+#+header: :var x=0 :exports none
+#+begin_src python
+  values = np.array(x)[:,1]
+  return np.mean(values)
+#+end_src
+
+#+RESULTS: mean
+
+#+RESULTS:
+
+#+CALL: mean(initial_data)
+
+#+RESULTS:
+: -0.61900975
+
+Another paragraph about the mean, whose value is call_mean(initial_data) {{{results(=-0.61900975=)}}}.
+
+
+* Plotting
+
+#+begin_src python :var timeseries=initial_data :dir "./figures"
+  import matplotlib.pyplot as plt
+  timeseries = np.array(timeseries)
+  plt.plot(timeseries[:,0], timeseries[:,1])
+  plt.savefig("myfig.png")
+#+end_src
+
+#+RESULTS:
+: None
+
+[[./figures/myfig.png]]
+
+
